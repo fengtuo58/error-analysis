@@ -1,0 +1,17 @@
+        typedef struct{
+        void*ptr;
+        U64;
+        U32;
+        int fd;
+        }epoll_data;
+        
+        struct epoll_evnt{
+        int events;
+        epoll_data data;
+        }
+   
+   
+        struct epoll_event epv = {0, {0}};  //初始化联合体成员{0};
+        int op;  
+        epv.data.ptr = ev;  
+        epv.events = ev->events = events;  
